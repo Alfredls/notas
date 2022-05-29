@@ -10,13 +10,15 @@ import { TaskList } from './components/TaskList'
 function App() {
 
   return (
-    <div>
+    <div className='container'>
       <Heading />
 
+      <div className='containerB'>
       <Routes>
         <Route path='/' element={<TaskList />} />
         <Route path='/add' element={<TaskForm />} />
       </Routes>
+      </div>
       
     </div>
   )
