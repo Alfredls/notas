@@ -8,8 +8,14 @@ export const TaskList = () => {
     <div>
       {
         task.map(task =>(
-          <div key={task.id}>
-            <h1>{task.title}</h1>
+          <div className='card' key={task.id}>
+            <div>
+              <span>{task.title}</span><span>{task.id}</span>
+            </div>
+            <div>
+              <button>Edit</button>
+              <button>Delete</button>
+            </div>
           </div>
         ))
       }
