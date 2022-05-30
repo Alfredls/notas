@@ -112,6 +112,15 @@ body {
  .colorgray:hover{
    background-color: rgb(138, 137, 137)
  }
+
+ .colorM {
+   background-color: rgb(194, 7, 178);
+ }
+
+ .colorM:hover {
+   background-color: rgb(247, 60, 231);
+ }
+ 
  .link{
    text-decoration: none;
    font-size: 0.9rem;

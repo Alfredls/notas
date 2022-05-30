@@ -1,14 +1,16 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { GlobalContext } from "../context/GlobalContext"
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, useParams} from 'react-router-dom'
 
 export const TaskForm = () => {
 
   let navigate =useNavigate();
+  const params = useParams()
 
-  const{ addTask } = useContext(GlobalContext);
+  const{ addTask, tasks, updateTask } = useContext(GlobalContext);
 
   const[ task, setTask] = useState({
+    id: "",
     title: "",
     description: "",
   })
@@ -19,13 +21,30 @@ export const TaskForm = () => {
   const handleSumit = (e)=>{
     e.preventDefault();
     /* console.log(task, 'submit') */
-    addTask(task);
+    if(task.id){
+      updateTask(task)
+    }else{
+      addTask(task);
+    }
     navigate("/", { replace: true })
   }
 
+  useEffect(() => {
+    console.log(params)
+    const taskFound = tasks.find(task=> task.id === params.id);
+
+    if(taskFound){
+      setTask(taskFound)
+      /* console.log('editando..') */
+    }else{
+      console.log('creando..')
+    }
+  }, [params.id, tasks])
+  
+
   return (
     <div className=' form'>
-      <h2>A task</h2>
+      <h2>{ task.id? "Editing" : "Create a Task"}</h2>
       <form className='form-c' onSubmit={handleSumit}>
         <input 
           type="text"
@@ -33,6 +52,7 @@ export const TaskForm = () => {
           placeholder='Write Title'
           onChange={handleChange}
           autoComplete='off'
+          value={task.title}
           className='input' />
         <textarea 
           cols="20"
@@ -41,8 +61,9 @@ export const TaskForm = () => {
           name='description'
           onChange={handleChange}
           autoComplete='off'
+          value={task.description}
           className='input'/>
-        <button className='button'>Create Task</button>
+        <button className='button'>{ task.id? "Edit" : "Create a Task"}</button>
       </form>
     </div>
   )

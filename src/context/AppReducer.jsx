@@ -1,14 +1,38 @@
-export default function appReducer(state, action){
+export default function appReducer(state,{type, payload}){
 
-  /* console.log(state, action) */
+  console.log(state.tasks, 'tasssss')
 
-  switch(action.type){
+  switch(type){
     case 'ADD_TASK':
-      return {task: [...state.tasks, action.payload], }
+      return {
+        tasks: [...state.tasks, payload], 
+      }
     case 'DELETE_TASK':
-      return { task: [] }
+      return { 
+        tasks: state.tasks.filter(task => task.id !== payload)
+      }
+    case 'UPDATE_TASK':
+      const updatedTask = payload
+
+      const updateTasks = state.tasks.map(task =>{
+        if(task.id === updatedTask.id){
+          task.title = updatedTask.title
+          task.description = updatedTask.description
+        }
+          return task
+        })
+        return{
+          tasks: updateTasks,
+        }
+    case 'TOGGLE_TASK_DONE':
+      return {
+        tasks: state.tasks.map((task)=>
+        task.id === payload ? { ...task, done: !task.done} : task
+        ),
+      }
+
     default:
-      break;
+      return state
 
   }
 

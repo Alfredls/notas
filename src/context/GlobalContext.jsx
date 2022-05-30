@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import appReducer from './AppReducer'
 
 const initialState = {
-  task: [
+  tasks: [
     {
       id: '1',
       title: 'title one',
@@ -26,7 +26,6 @@ export const ContextProvider = ({children})=>{
   const [state, dispatch] = useReducer(appReducer, initialState)
 
   const addTask = (task)=>{
-    /* console.log(task, 'adding a task'); */
     dispatch({type: 'ADD_TASK', payload:{...task, id:uuidv4()}})
   }
 
@@ -34,7 +33,17 @@ export const ContextProvider = ({children})=>{
     dispatch({ type: 'DELETE_TASK', payload: id})
   }
 
-  return <GlobalContext.Provider value={{...state, addTask, deleteTask}}>
+  const updateTask = (task) =>{
+    dispatch({type: 'UPDATE_TASK', payload: task})
+  }
+
+  const toggleTaskDone = (id)=>{
+    dispatch({
+      type: 'TOGGLE_TASK_DONE', payload: id
+    })
+  }
+
+  return <GlobalContext.Provider value={{...state, addTask, deleteTask, updateTask, toggleTaskDone}}>
     {children}
   </GlobalContext.Provider>
 }

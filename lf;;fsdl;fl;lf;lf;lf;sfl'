@@ -1,0 +1,41 @@
+[33mcommit 7890aebbcceadde14222df07dfbe336c716e353f[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Luis Garcia <bigluisbad@gmail.com>
+Date:   Sun May 29 22:40:42 2022 -0400
+
+    falta tiene bugs
+
+[33mcommit 90da0a7196f32c50923c2fa24b31576807e4567d[m
+Author: Luis Garcia <bigluisbad@gmail.com>
+Date:   Sun May 29 18:29:42 2022 -0400
+
+    funcion handleChange en formulario
+
+[33mcommit a2536e95f05ea58f82b38bb6aa746737e8a0923a[m
+Author: Luis Garcia <bigluisbad@gmail.com>
+Date:   Sun May 29 18:13:58 2022 -0400
+
+    estilos formulacio y listas
+
+[33mcommit 527106d03df0b09bf3b195d7174abc2a3ee28fe1[m
+Author: Luis Garcia <bigluisbad@gmail.com>
+Date:   Sun May 29 17:25:49 2022 -0400
+
+    creando useContext en app
+
+[33mcommit ebaeb38b9220b40c32d6fb575c5faa895473a982[m
+Author: Luis Garcia <bigluisbad@gmail.com>
+Date:   Sun May 29 16:48:04 2022 -0400
+
+    estilos navBar Heading
+
+[33mcommit 4a4468f23056b48495a876bed3e477725ca9645e[m
+Author: Luis Garcia <bigluisbad@gmail.com>
+Date:   Sun May 29 15:47:56 2022 -0400
+
+    agregando rutas
+
+[33mcommit bbab82487b83e40bb283dff2d1a84767ca45c7f8[m
+Author: Luis Garcia <bigluisbad@gmail.com>
+Date:   Sun May 29 15:29:38 2022 -0400
+
+    iniciando el proyect
