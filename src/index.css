@@ -86,3 +86,33 @@ body {
    color: var(--colorSecond);
    font-size: 1rem;
  }
+
+ .btn{
+   padding: 3px 8px;
+   margin-left: 10px;
+   color: var(--colorSecond);
+   border: none;
+   font-weight: bold;
+ }
+ .btn:active{
+   transition: 0.3s;
+   box-shadow: none;
+   transform: scale(0.9);
+ }
+ .colorred{
+   background-color: rgb(172, 5, 5);
+ }
+ .colorred:hover{
+   transition: 0.2s;
+   background-color: rgb(255, 0, 0);
+ }
+ .colorgray{
+   background-color: rgb(105, 105, 105);
+ }
+ .colorgray:hover{
+   background-color: rgb(138, 137, 137)
+ }
+ .link{
+   text-decoration: none;
+   font-size: 0.9rem;
+ }

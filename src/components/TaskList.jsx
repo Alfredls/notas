@@ -1,8 +1,9 @@
 import React, {useContext} from 'react'
+import { Link } from 'react-router-dom';
 import { GlobalContext } from "../context/GlobalContext"
 
 export const TaskList = () => {
-  const {task} = useContext(GlobalContext);
+  const {task, deleteTask} = useContext(GlobalContext);
   /* console.log(context) */
   return (
     <div>
@@ -13,8 +14,8 @@ export const TaskList = () => {
               <span>{task.title}</span><span>{task.id}</span>
             </div>
             <div>
-              <button>Edit</button>
-              <button>Delete</button>
+              <Link to={`/edit/${task.id}`} className='btn colorgray link'>Edit</Link>
+              <button className='btn colorred' onClick={()=>deleteTask(task.id)}>Delete</button>
             </div>
           </div>
         ))
