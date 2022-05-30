@@ -55,12 +55,12 @@ body {
  }
  .card{
    display: flex;
-   min-width: 300px;
-   justify-content: space-between;
+   min-width: 280px;
+   justify-content: space-evenly;
  /*   border: #3df8ba solid 1px; */
   background-color: var(--colorFifth) ;
   padding: 1rem 2rem;
-   margin-top: 5px;
+   margin-top: 10px;
  }
 
  .form{
@@ -124,4 +124,49 @@ body {
  .link{
    text-decoration: none;
    font-size: 0.9rem;
+ }
+
+ .card-item{
+   /* border: 1px solid white; */
+   padding: 1.5rem;
+   max-width: 250px;
+  /*  min-width: 200px; */
+   font-size: 0.8rem;
+   background-color: var(--colorfirst);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   position: relative;
+ }
+ .card-title{
+   text-transform: uppercase;
+  }
+  .card-p{
+   text-transform: capitalize;
+   margin: 10px 0;
+   color: var(--colorThird);
+ }
+ .number{
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(134, 176, 238);
+  align-items: center;
+  border-radius: 50%;
+  font-weight: bold;
+  text-align: center;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  color: var(--colorfirst);
+ 
+ }
+
+ .btns-c{
+   display: flex;
+  flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center
  }

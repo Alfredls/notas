@@ -8,17 +8,17 @@ export const TaskList = () => {
   return (
     <div>
       {
-        tasks.map(task =>(
+        tasks.map((task, index) =>(
           <div className='card' key={task.id}>
-            <div>
-              <span>{task.title}</span>
-              <span>{task.id}</span>
-              <p>{task.description}</p>
+            <div className='card-item'>
+            <span className='number colorred'>{index+1}</span>
+              <h3 className='card-title'>{task.title}</h3>
+              <p className='card-p'>{task.description}</p>
               <button className='btn colorM' onClick={()=> toggleTaskDone(task.id)}>
                 {task.done? "Undone" : "Done"}
               </button>
             </div>
-            <div>
+            <div className='btns-c'>
               <Link to={`/edit/${task.id}`} className='btn colorgray link'>Edit</Link>
               <button className='btn colorred' onClick={()=>deleteTask(task.id)}>Delete</button>
             </div>
